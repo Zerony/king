@@ -16,7 +16,7 @@ class Main_controller extends CI_Controller {
 	
 	public function auth_user()
   	{
-		auth_user($this);
+		auth_user($this, $this->config->base_url());
   	}
 	
 	public function register_user()
@@ -66,6 +66,6 @@ class Main_controller extends CI_Controller {
 
 	public function ajax_logout()
     {
-		logout($_POST['logout']);
+		logout($this, $_POST['logout']);
     }
 }
