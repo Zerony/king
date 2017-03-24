@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main_controller extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$data = array(
@@ -27,24 +12,11 @@ class Main_controller extends CI_Controller {
 		$this->load->view('header', $data);
 		$this->load->view('main_page', $data);
 		$this->load->view('footer');
-		$hash = password_hash("Grenada12", PASSWORD_DEFAULT);
-		//echo "*".$hash."*";
 	}
 	
 	public function auth_user()
   	{
-		$user_model = $this->load->model('Usermodel');
-		$username = trim($_POST['username']);
-		$password = trim($_POST['password']);
-		$is_authorized = $this->Usermodel->authorization($username, $password);
-		
-		if ($is_authorized) {
-			$this->create_session($is_authorized);
-			echo 1;
-			return; 
-		} 
-		echo $this->label->get('wrong_pass');
-		return; 
+		auth_user($this);
   	}
 	
 	public function register_user()
@@ -63,7 +35,7 @@ class Main_controller extends CI_Controller {
 		} 
 		
 		
-		$user_model = $this->load->model('Usermodel');
+		$this->load->model('Usermodel');
 		$user_info = array(
 			'name' => trim($_POST['name']),
     		'pass' => trim($_POST['pass']),
@@ -89,25 +61,11 @@ class Main_controller extends CI_Controller {
 	}
 	
 	public function create_session($user_record){
-		$ses_data = array(
-                'login' => $user_record['name'],
-				'email' => $user_record['email'],
-				'role' => $user_record['role'],
-				'phone' => $user_record['phone']
-            );
-
-        $this->session->set_userdata($ses_data);
+		create_session($user_record, $this);
 	}
-	
-	
-	
+
 	public function ajax_logout()
     {
-        $logout = $_POST['logout'];
-
-        if($logout) {
-			session_destroy();
-            //$this->session->unset_userdata('login');
-        }
+		logout($_POST['logout']);
     }
 }
