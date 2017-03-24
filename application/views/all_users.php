@@ -10,7 +10,7 @@
 	if ($allUsers && sizeof($allUsers) > 0) {
 		foreach ($allUsers as $user) {
 			echo "<tr>
-					  <td><a href=\"#\">".$user["Name"]."</a></td>
+					  <td><a href=\"#\">".$user["name"]."</a></td>
 					  <td></td>
 				  </tr>";
 		}

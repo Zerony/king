@@ -7,7 +7,7 @@ class Gamemodel extends CI_Model
 
    	}
 	
-	public function getAllGames () 
+	public function get_all_games ()
 	{
 		$query = "SELECT g.id, g.name, g.createddate, gp.family, gp.totalpoints, gp.id as gpid, gp.userid, u.name as username
 					FROM Game as g
@@ -26,7 +26,7 @@ class Gamemodel extends CI_Model
 		return $game_data; 
 	}
 	
-	public function getGame ($gameid) 
+	public function get_game ($gameid)
 	{
 		$query = "SELECT g.id, g.name, g.createddate, g.description, gp.family, gp.totalpoints,gp.place, gp.userid, u.name as username
 					FROM Game as g
@@ -44,13 +44,13 @@ class Gamemodel extends CI_Model
 		return $game_data; 
 	}
 	
-	public function getAllFamillyNames () 
+	public function get_all_familly_names ()
 	{
 		$familys = 	array('Baratheon', 'Greyjoy', 'Lannsiter', 'Martell', 'Stark', 'Tyrell'); 
 		return $familys; 
 	}
 	
-	public function creategame($date, $name, $description, $users_in_game)
+	public function create_game($date, $name, $description, $users_in_game)
 	{
 		$data = array(
         'CreatedDate' => $date,

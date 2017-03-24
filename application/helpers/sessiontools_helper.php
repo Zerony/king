@@ -28,8 +28,9 @@
         $context->session->set_userdata($ses_data);
     }
 
-    function logout($context, $logout) {
+    function logout($context, $logout, $redirectTo="http://www.kings.ru/") {
         if($logout) {
             session_destroy();
         }
+        header("Location: ".$redirectTo); /* Redirect browser */
     }

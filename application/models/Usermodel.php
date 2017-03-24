@@ -5,7 +5,7 @@ class Usermodel extends CI_Model {
 
    	}
 	
-	function getAllUsers() {
+	function get_all_users() {
 		$qGetAll = "SELECT id, name, photo FROM user";
 		$res = $this->db->query($qGetAll);
 		$userData = $res->result_array();
