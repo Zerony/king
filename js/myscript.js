@@ -18,16 +18,18 @@ jQuery(window).load(function () {
 /*-----------------------------------------------------------------------------------*/
 /*	NICESCROLL
 /*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function() {
-	
-	jQuery("body").niceScroll({
-		cursorcolor:"#333",
-		cursorborder:"0px",
-		cursorwidth :"8px",
-		zindex:"9999"
-	});
-	
-});
+//jQuery(document).ready(function() {
+//	if ($(window).width() > 1920) {
+//		return;
+//	}
+//	jQuery("body").niceScroll({
+//		cursorcolor:"#333",
+//		cursorborder:"0px",
+//		cursorwidth :"8px",
+//		zindex:"9999"
+//	});
+//
+//});
 
 
 
@@ -83,16 +85,16 @@ jQuery(document).ready(function() {
 			jQuery('header .navmenu').slideToggle(300);
 		});
 	}
-		
+
 	// if single_page
-	if (jQuery("#page").hasClass("single_page")) {			
+	if (jQuery("#page").hasClass("single_page")) {
 	}
 	else {
 		$(window).scroll(function(event) {
 			calculateScroll();
 			calculateScrollSlider();
 		});
-		$('.navmenu ul li a, .mobile_menu ul li a, .btn_down, #detailed_got a').click(function(e) {  
+		$('.navmenu ul li a, .mobile_menu ul li a, .btn_down, #detailed_got a').click(function(e) {
 			$('html, body').animate({scrollTop: $(e.target.hash).offset().top - 80}, 1000);
 			return false;
 		});

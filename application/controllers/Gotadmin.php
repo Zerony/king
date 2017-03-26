@@ -6,7 +6,9 @@ class Gotadmin extends CI_Controller
 
     public function index()
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         $this->load->model('Gamemodel');
         $data = array(
             'name' => $this->session->userdata('login'),
@@ -21,7 +23,9 @@ class Gotadmin extends CI_Controller
 
     public function createGame()
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         $this->load->model('Gamemodel');
         $data = array(
             'name' => $this->session->userdata('login'),
@@ -34,7 +38,9 @@ class Gotadmin extends CI_Controller
 
     public function users()
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         $this->load->model('Usermodel');
         $allUsers = $this->Usermodel->get_all_users();
         $data = array(
@@ -49,7 +55,9 @@ class Gotadmin extends CI_Controller
 
     public function editgame($gameid)
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         $this->load->model('Gamemodel');
         $data = array(
             'name' => $this->session->userdata('login'),
@@ -64,7 +72,9 @@ class Gotadmin extends CI_Controller
 
     public function searchUser()
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         $this->load->model('Usermodel');
         $users = $this->Usermodel->search_user($_GET["q"]);
         $json_response = json_encode($users);
@@ -73,7 +83,9 @@ class Gotadmin extends CI_Controller
 
     public function saveGame()
     {
-        is_access();
+        if (!is_access($this)) {
+            return;
+        }
         try {
             $users_in_game = $this->prepare_game_data();
         } catch (Exception $e) {

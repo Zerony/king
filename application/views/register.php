@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Реєстрація | KingsGames</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel='stylesheet' type='text/css' href='/admin/css/huraga-red.css'>
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="/admin/img/icons/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/admin/img/icons/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/admin/img/icons/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/admin/img/icons/apple-touch-icon-57-precomposed.png">
@@ -55,18 +54,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <label class="control-label" for="password">Password</label>
                     <div class="controls">
                         <input id="password" type="password" placeholder="Password" name="password">
-                        <label class="checkbox">
-                            <input id="optionsCheckbox" type="checkbox" value="option1"> Remember me
-                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password2">Password again</label>
+                    <div class="controls">
+                        <input id="password2" type="password" placeholder="Password" name="password2">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="phone">Phone</label>
+                    <div class="controls">
+                        <input id="phone" type="tel" placeholder="Phone" name="phone">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="controls">
+                        <input id="email" type="text" placeholder="Email" name="email">
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button class="btn btn-primary" type="submit"><span class="awe-signin"></span> Log in</button>
+                    <button class="btn btn-large btn-primary" type="submit">Register</button>
+                    <a class="btn btn-large btn-warning" href="/">Cancel</a>
                 </div>
             </fieldset>
         </form>
     </div>
-    <p><a href="#" class="pull-right"><small>Password reset</small></a></p>
 
 </section>
 <!-- /Main page container -->

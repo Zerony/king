@@ -43,6 +43,22 @@ class Gamemodel extends CI_Model
 		
 		return $game_data; 
 	}
+
+	public function get_last_game() {
+		$query = "SELECT g.id, g.name, g.createddate, g.description, gp.family, gp.totalpoints,gp.place, gp.userid, u.name as username
+					FROM Game as g
+					INNER JOIN GamePlayer as gp ON g.id = gp.gameid
+					INNER JOIN User as u ON u.id = gp.userid
+					ORDER BY id DESC LIMIT 1";
+		$res = $this->db->query($query);
+		$game_data = $res->result_array();
+		if (count($game_data) == 0)
+		{
+			return false;
+		}
+
+		return $game_data;
+	}
 	
 	public function get_all_familly_names ()
 	{

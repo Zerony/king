@@ -1,7 +1,9 @@
 <?
-	function is_access() {
+	function is_access($context) {
 		if (!isset($_SESSION['role']) || $_SESSION['role'] != ADMIN) {
-			exit ('No access to page');	
+			$context->load->view('access_forbidden');
+			return false;
 		}
+		return true;
 	}
 ?>

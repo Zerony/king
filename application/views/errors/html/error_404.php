@@ -1,64 +1,56 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<meta charset="utf-8">
-<title>404 Page Not Found</title>
-<style type="text/css">
+	<meta charset="utf-8">
+	<title>Error 404 | KingsGames</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
+	<!-- CSS styles -->
+	<link rel='stylesheet' type='text/css' href='/admin/css/huraga-red.css'>
 
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="/admin/img/icons/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/admin/img/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/admin/img/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/admin/img/icons/apple-touch-icon-57-precomposed.png">
 
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
+	<!-- JS Libs -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/admin/js/libs/jquery.js"><\/script>')</script>
+	<script src="/admin/js/libs/modernizr.js"></script>
+	<script src="/admin/js/libs/selectivizr.js"></script>
 
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
+	<script>
+		$(document).ready(function(){
 
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
+			// Tooltips
+			$('[title]').tooltip({
+				placement: 'top'
+			});
 
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	box-shadow: 0 0 8px #D0D0D0;
-}
-
-p {
-	margin: 12px 15px 12px 15px;
-}
-</style>
+		});
+	</script>
 </head>
-<body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+<body class="error-page">
+
+<!-- Error page container -->
+<section class="error-container">
+
+	<h1>404</h1>
+	<p class="description">Whoops! Page not found...</p>
+	<p>Sorry, it appears the page you were looking for doesn't exist anymore or might have been moved. If the problem persists, please contact our support at <a href="support@kingsgames.com.ua">example@domain.com</a>.</p>
+	<a href="/" class="btn btn-alt btn-primary btn-large" title="Back to Homepage">Back to Homepage</a>
+
+</section>
+<!-- /Error page container -->
+
+<!-- Bootstrap scripts -->
+<script src="/admin/js/bootstrap/bootstrap-tooltip.js"></script>
+
 </body>
 </html>

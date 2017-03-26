@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="/js/jquery.prettyPhoto.js" type="text/javascript"></script>
-	<script src="/js/jquery.nicescroll.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.nicescroll.js" type="text/javascript"></script>
 	<script src="/js/superfish.min.js" type="text/javascript"></script>
 	<script src="/js/jquery.flexslider-min.js" type="text/javascript"></script>
 	<script src="/js/owl.carousel.js" type="text/javascript"></script>
