@@ -99,14 +99,17 @@
     });
 
 </script>
-<section id="got_rating_section">
-    <div class="container" style="margin-bottom:3%;">
+<section id="got_rating_section" class="container">
+    <?php
+        echo $menu;
+    ?>
+    <div class="content-block" role="main">
         <?
         if (isset($gameid)) {
             echo "<h1>Редагування гри номер $gameid</h1>";
         }
         ?>
-        <form id="got_new_game_form" action="/Gotadmin/savegame" class="form-horizontal" method="post">
+        <form id="got_new_game_form" action="<?php echo $action; ?>" class="form-horizontal" method="post">
             <table class="table">
                 <tr>
                     <td>User</td>
@@ -141,13 +144,13 @@
 
                 <script type="text/javascript">
                     $(document).ready(function () {
-                        var isEditMode = <?php echo (isset($gameid)?"true":"false"); ?>;
+                        var isEditMode = <?php echo (isset($game_id)?"true":"false"); ?>;
                         if (!isEditMode) {
                             $(".user_select").tokenInput(
                                 "/Gotadmin/searchuser"
                             );
                         } else {
-                            var data = JSON.parse('<?php if(isset($gameid)) echo json_encode($gamedata);?>');
+                            var data = JSON.parse('<?php if(isset($game_id)) echo json_encode($gamedata);?>');
 
                             var i = 0;
 
@@ -179,7 +182,7 @@
 
                                 i++;
                             }
-                            $("#gameId").val(data[0].name);
+                            $("#gameName").val(data[0].name);
                             $("#date").val(data[0].createddate.substr(0, 10));
                             $("#description").val(data[0].description);
 
@@ -192,7 +195,7 @@
                 <label class="control-label" for="input">Name:</label>
 
                 <div class="controls">
-                    <input id="gameId" name="name" class="input-xlarge" type="text">
+                    <input id="gameName" name="name" class="input-xlarge" type="text">
 
                     <p class="help-block">Назва гри</p>
                 </div>
@@ -217,6 +220,7 @@
                 </div>
             </div>
             <div class="form-actions">
+                <input id="gameId" name="game_id" value="<?php echo $game_id; ?>" type="hidden">
                 <input type="submit" value="Save" class="btn btn-alt btn-large btn-primary" style="margin: 0px auto;"/>
             </div>
         </form>

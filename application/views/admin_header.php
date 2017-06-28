@@ -21,7 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel='stylesheet' type='text/css' href='/admin/css/huraga-red.css'>
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="/admin/img/icons/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/admin/img/icons/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/admin/img/icons/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/admin/img/icons/apple-touch-icon-57-precomposed.png">
@@ -51,16 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <header class="container">
 
     <!-- Main page logo -->
-    <h1><a href="/"><img src="/admin/img/clear_logo.png" height="100" style="height: 100px;"/></a></h1>
+    <h1><a href="/gotadmin"><img src="/admin/img/clear_logo.png" height="100" style="height: 100px;"/></a></h1>
 
     <!-- Alternative navigation -->
     <nav>
         <ul>
-            <li>
-                <form class="nav-search">
-                    <input type="text" placeholder="Search&hellip;">
-                </form>
-            </li>
             <li><a href="/Gotadmin/logout">Logout</a></li>
         </ul>
     </nav>

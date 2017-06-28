@@ -49,7 +49,7 @@ class Gamemodel extends CI_Model
 					FROM Game as g
 					INNER JOIN GamePlayer as gp ON g.id = gp.gameid
 					INNER JOIN User as u ON u.id = gp.userid
-					ORDER BY id DESC LIMIT 1";
+					ORDER BY createddate DESC LIMIT 1";
 		$res = $this->db->query($query);
 		$game_data = $res->result_array();
 		if (count($game_data) == 0)
@@ -82,6 +82,26 @@ class Gamemodel extends CI_Model
 		}
 		$this->db->insert_batch('GamePlayer', $users_in_game);
 		return $game_id; 
+	}
+
+	public function update_game($date, $name, $description, $users_in_game, $game_id)
+	{
+		$data = array(
+			'Id' => $game_id,
+			'CreatedDate' => $date,
+			'Name' => $name,
+			'Description' => $description
+		);
+
+		$res = $this->db->replace('Game', $data);
+
+		$this->db->delete('gameplayer', array('GameId' => $game_id));
+
+		foreach($users_in_game as $value) {
+			$value->GameId = $game_id;
+		}
+		$this->db->insert_batch('GamePlayer', $users_in_game);
+		return $game_id;
 	}
 }
 ?>

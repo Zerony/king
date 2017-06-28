@@ -11476,6 +11476,14 @@ body {
     float: right;
     margin-left: 20px;
     *zoom: 1;
+    margin-top: -120px;
+    position: relative;
+    z-index: 100;
+}
+
+header {
+    position: relative;
+    z-index: 0;
 }
 
 .content-block:before,
@@ -11494,7 +11502,6 @@ body > header {
     position: relative;
     padding: 20px 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid #dedede;
 }
 
 body > header > h1 {

@@ -116,7 +116,7 @@
 </script>
 
 <!-- jQuery jGrowl -->
-<script type="text/javascript" src="js/plugins/jGrowl/jquery.jgrowl.js"></script>
+<script type="text/javascript" src="/admin/js/plugins/jGrowl/jquery.jgrowl.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){

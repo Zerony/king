@@ -1,10 +1,9 @@
-<style>
-
-
-</style>
 
 <section class="container" role="main" id="got_all_games">
-    <div class="container" style="margin-bottom:3%;">
+    <?php
+        echo $menu;
+    ?>
+    <div class="content-block" role="main">
         <table class="table">
             <tr>
                 <td>Game name</td>

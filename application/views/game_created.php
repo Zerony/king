@@ -41,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Error page container -->
 <section class="error-container">
 
-    <h1><? echo $game_id ?></h1>
-    <p class="description">Awesome! Game was created</p>
-    <p>Redirecting to: <a href="<? echo $redirect_to; ?>"><? echo $redirectTo; ?></a>.</p>
+    <h1>Номер гри <? echo $game_id ?></h1>
+    <p class="description"><?echo $text; ?></p>
+    <p>Redirecting to: <a href="<? echo $redirect_to; ?>"><? echo $redirect_to; ?></a>.</p>
 
 
 </section>
